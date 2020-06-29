@@ -20,9 +20,8 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public String getAllUser(){
-        List<User> users = userMapper.selectList(null);
-        return JSON.toJSONString(users);
+    public List<User> getAllUser(){
+        return userMapper.selectList(null);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.lj.cmml.cmmluser.controller;
 
+import com.lj.cmml.common.model.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -15,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 @Slf4j
-public class VerifyController {
+public class VerifyController extends BaseController {
 
     @ApiOperation("用户模块 服务启动测试接口")
     @GetMapping("")
-    public String verify(){
+    public Result verify(){
         log.info("功能校验接口....");
-        return "我还活着...   一切正常...";
+        return success() ;
     }
 
 
