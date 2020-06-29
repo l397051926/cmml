@@ -1,8 +1,6 @@
 
 package com.lj.cmml.common;
 
-import java.util.regex.Pattern;
-
 /**
  * Constants
  */
@@ -58,4 +56,28 @@ public final class Constants {
      */
     public static final String EQUAL_SIGN = "=";
 
+    /**
+     * date format of yyyy-MM-dd HH:mm:ss
+     */
+    public static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
+
+    /**
+     * date format of yyyyMMddHHmmss
+     */
+    public static final String YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
+
+    /**
+     * http connect time out
+     */
+    public static final int HTTP_CONNECT_TIMEOUT = 60 * 1000;
+
+    /**
+     * http connect request time out
+     */
+    public static final int HTTP_CONNECTION_REQUEST_TIMEOUT = 60 * 1000;
+
+    /**
+     * httpclient soceket time out
+     */
+    public static final int SOCKET_TIMEOUT = 60 * 1000;
 }
