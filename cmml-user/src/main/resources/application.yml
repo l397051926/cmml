@@ -1,0 +1,7 @@
+server:
+  port: 9111
+  servlet:
+    context-path: /user/
+spring:
+  application:
+    name: user-server
