@@ -40,7 +40,7 @@
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
         <swagger-bootstrap-ui.verison>1.9.3</swagger-bootstrap-ui.verison>
-        <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.1.0</mybatis-plus-boot-starter.version>
         <commons.email.version>1.5</commons.email.version>
         <commons.collections4.version>4.1</commons.collections4.version>
         <commons.codec.version>1.11</commons.codec.version>
@@ -48,6 +48,9 @@
         <oshi.core.version>3.5.0</oshi.core.version>
         <commons.configuration.version>1.10</commons.configuration.version>
         <httpclient.version>4.5.7</httpclient.version>
+        <log4j-api.version>2.7</log4j-api.version>
+        <log4j-core.version>2.7</log4j-core.version>
+        <log4j-slf4j-impl.version>2.11.0</log4j-slf4j-impl.version>
     </properties>
 
     <dependencies>
@@ -79,7 +82,7 @@
             <version>${commons-collections}</version>
         </dependency>
 
-
+        <!-- some utils alays -->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
@@ -114,6 +117,23 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>${httpclient.version}</version>
+        </dependency>
+
+        <!--log4j2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j-slf4j-impl.version}</version>
         </dependency>
 
 
