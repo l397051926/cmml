@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="error" name="cmml-user-service" packages="com.lj.cmml.common.log.converter">
     <Properties>
-        <Property name="APP_NAME">Ark-File_Service</Property>
+        <Property name="APP_NAME">cmml-user</Property>
         <Property name="LOG_HOME">logs/${APP_NAME}</Property>
         <Property name="LOG_PREFIX_STRING">%white{[%4shorten{%thread}{4}{body}]} %highlight{%5.5level}{FATAL=bright red,ERROR=bright red,WARN=bright yellow,INFO=bright blue,TRACE=bright white,DEBUG=bright magenta}</Property>
         <Property name="LOG_SUFFIX_STRING">%highlight{%msg}{FATAL=bright red,ERROR=red,WARN=yellow,INFO=white,TRACE=white,DEBUG=magenta}</Property>
@@ -9,15 +9,15 @@
     </Properties>
     <Appenders>
         <Console name="STDOUT_PLAIN">
-            <PatternLayout pattern="${LOG_PREFIX_STRING} ${LOG_CLASS_STRING}{bright,green} ${LOG_SUFFIX_STRING}%n"/>
+            <PatternLayout pattern="${LOG_PREFIX_STRING} ${LOG_CLASS_STRING}{bright,green} ${LOG_SUFFIX_STRING}%n" disableAnsi="false" noConsoleNoAnsi="false"/>
             <ThresholdFilter level="debug"/>
         </Console>
         <Console name="STDOUT_HIGHLIGHT">
-            <PatternLayout pattern="${LOG_PREFIX_STRING} ${LOG_CLASS_STRING}{bright,cyan} ${LOG_SUFFIX_STRING}%n"/>
+            <PatternLayout pattern="${LOG_PREFIX_STRING} ${LOG_CLASS_STRING}{bright,cyan} ${LOG_SUFFIX_STRING}%n" disableAnsi="false" noConsoleNoAnsi="false"/>
             <ThresholdFilter level="debug"/>
         </Console>
         <RollingFile name="FILE" fileName="${LOG_HOME}/current.log" filePattern="${LOG_HOME}/%d{MM-dd-yyyy}_%i.log.gz">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level%logger{50} - %msg%n"/>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level%logger{50} - %msg%n" disableAnsi="false" noConsoleNoAnsi="false"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="100 MB"/>
                 <TimeBasedTriggeringPolicy/>

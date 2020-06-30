@@ -21,17 +21,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-<!--            <exclusions>&lt;!&ndash; 去掉springboot默认配置 &ndash;&gt;-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.springframework.boot</groupId>-->
-<!--                    <artifactId>spring-boot-starter-logging</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-        </dependency>
-
-        <dependency> <!-- 引入log4j2依赖 -->
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j2</artifactId>
+            <exclusions><!-- 去掉springboot默认配置 -->
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -69,6 +64,11 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.16</version>
         </dependency>
 
     </dependencies>
