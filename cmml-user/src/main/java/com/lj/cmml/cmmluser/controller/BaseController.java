@@ -144,22 +144,6 @@ public class BaseController {
      * @param list object list
      * @return result code
      */
-    private Result getResult(String msg, Object list, Status status) {
-        Result result = new Result();
-        result.setStatusCode(status.getCode());
-        result.setMessage(msg);
-
-        result.setData(list);
-        return result;
-    }
-
-    /**
-     * get result
-     *
-     * @param msg  message
-     * @param list object list
-     * @return result code
-     */
     private Result getResult(String msg, Object list) {
         Result result = new Result();
         result.setStatusCode(Status.SUCCESS.getCode());
@@ -176,10 +160,7 @@ public class BaseController {
      * @return
      */
     public Result error(Status status) {
-        Result result = new Result();
-        result.setStatusCode(status.getCode());
-        result.setMessage(status.getMsg());
-        return result;
+        return new Result(status.getCode(), status.getMsg());
     }
 
 }

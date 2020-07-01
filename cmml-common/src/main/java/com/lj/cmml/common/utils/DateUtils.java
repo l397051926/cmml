@@ -507,7 +507,7 @@ public class DateUtils {
      * @throws IllegalArgumentException if the date is null
      */
     public static Date addDays(Date date, int amount) {
-        return addDays(date, amount);
+        return org.apache.commons.lang3.time.DateUtils.addDays(date, amount);
     }
 
     /**

@@ -1,6 +1,7 @@
 
 package com.lj.cmml.common.utils;
 
+import com.lj.cmml.common.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -128,7 +129,7 @@ public class OSUtils {
         BufferedReader bufferedReader = null;
 
         try {
-            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/etc/passwd")));
+            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream("/etc/passwd"), Constants.UTF_8));
             String line;
 
             while ((line = bufferedReader.readLine()) != null) {
@@ -181,7 +182,7 @@ public class OSUtils {
 
         try {
             Process p = Runtime.getRuntime().exec(command);
-            br = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            br = new BufferedReader(new InputStreamReader(p.getInputStream(), Constants.UTF_8));
             String line;
             StringBuilder sb = new StringBuilder();
 

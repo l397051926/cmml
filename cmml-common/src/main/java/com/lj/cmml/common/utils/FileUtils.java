@@ -1,6 +1,7 @@
 
 package com.lj.cmml.common.utils;
 
+import com.lj.cmml.common.Constants;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -89,7 +90,7 @@ public class FileUtils {
                 return false;
             }
             bufferedReader = new BufferedReader(new StringReader(content));
-            bufferedWriter = new BufferedWriter(new FileWriter(distFile));
+            bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(distFile), Constants.UTF_8));
             char buf[] = new char[1024];
             int len;
             while ((len = bufferedReader.read(buf)) != -1) {
@@ -338,9 +339,8 @@ public class FileUtils {
      * @throws IOException errors
      */
     public static String readFile2Str(InputStream inputStream) throws IOException{
-        String all_content=null;
-        try {
-            all_content = new String();
+        String all_content="";
+            try {
             InputStream ins = inputStream;
             ByteArrayOutputStream outputstream = new ByteArrayOutputStream();
             byte[] str_b = new byte[1024];
@@ -348,7 +348,7 @@ public class FileUtils {
             while ((i=ins.read(str_b)) > 0) {
                 outputstream.write(str_b,0,i);
             }
-            all_content = outputstream.toString();
+            all_content = new String(outputstream.toByteArray(), Constants.UTF_8);
             return all_content;
         } catch (Exception e) {
             logger.error(e.getMessage(),e);

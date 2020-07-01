@@ -100,10 +100,9 @@ public class HttpUtils {
         try {
             // 创建uri
             URIBuilder builder = new URIBuilder(url);
+
             if (param != null) {
-                for (String key : param.keySet()) {
-                    builder.addParameter(key, param.get(key));
-                }
+                param.forEach((key,val) -> builder.addParameter(key,val));
             }
             URI uri = builder.build();
 
@@ -146,9 +145,7 @@ public class HttpUtils {
             // 创建uri
             URIBuilder builder = new URIBuilder(url);
             if (param != null) {
-                for (String key : param.keySet()) {
-                    builder.addParameter(key, param.get(key));
-                }
+                param.forEach((key, val) -> builder.addParameter(key, val));
             }
             URI uri = builder.build();
 
@@ -202,7 +199,7 @@ public class HttpUtils {
         } finally {
             try {
                 response.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -230,7 +227,7 @@ public class HttpUtils {
         } finally {
             try {
                 response.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

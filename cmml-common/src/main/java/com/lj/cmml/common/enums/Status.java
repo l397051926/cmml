@@ -1,11 +1,16 @@
 
 package com.lj.cmml.common.enums;
 
+import lombok.Getter;
+
 /**
  *  status enum
  */
+@Getter
 public enum Status {
-
+    /**
+     * 状态码 操作集合
+     */
     SUCCESS(200, "操作成功")
     ;
 
@@ -17,19 +22,4 @@ public enum Status {
         this.msg = msg;
     }
 
-    public int getCode() {
-        return this.code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return this.msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
 }
