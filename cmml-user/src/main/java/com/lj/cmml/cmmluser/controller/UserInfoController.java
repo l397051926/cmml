@@ -1,7 +1,7 @@
 package com.lj.cmml.cmmluser.controller;
 
-import com.lj.cmml.cmmluser.entity.User;
-import com.lj.cmml.cmmluser.service.UserService;
+import com.lj.cmml.cmmluser.entity.UserInfo;
+import com.lj.cmml.cmmluser.service.UserInfoService;
 import com.lj.cmml.common.model.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -21,16 +21,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/user-info")
 @Log4j2
-public class UserController extends BaseController {
+public class UserInfoController extends BaseController {
 
     @Autowired
-    private UserService userService;
+    private UserInfoService userInfoService;
 
     @ApiOperation("获取全部用户列表")
     @GetMapping("/all")
     public Result getUsers() {
         log.info("查询 所有用户 列表");
-        List<User> allUser = userService.getAllUser();
+        List<UserInfo> allUser = userInfoService.getAllUser();
         return success(allUser);
     }
 
