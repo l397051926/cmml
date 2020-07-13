@@ -11,6 +11,7 @@
     <modules>
         <module>cmml-common</module>
         <module>cmml-user</module>
+        <module>cmml-gateway</module>
     </modules>
 
 

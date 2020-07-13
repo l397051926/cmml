@@ -1,0 +1,20 @@
+server:
+  port: 9010
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #是否注册到网关
+          enabled: false
+          lowerCaseServiceId: false
+      routes:
+        #可以 增加 过滤机智 before after between等
+        - id: user-server
+          uri: http://127.0.0.1:9111
+          predicates:
+            - Path=/user/**
+
