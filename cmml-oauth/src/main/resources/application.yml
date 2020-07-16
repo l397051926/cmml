@@ -3,4 +3,4 @@ spring:
     name: oauth2-server
 
 server:
-  port: 9090
+  port: 8080
