@@ -91,12 +91,17 @@
             <version>2.3.23</version>
         </dependency>
 
-
         <!-- beetl 模板引擎 -->
         <dependency>
             <groupId>com.ibeetl</groupId>
             <artifactId>beetl</artifactId>
             <version>2.2.5</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
 
     </dependencies>
