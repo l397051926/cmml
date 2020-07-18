@@ -22,6 +22,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
                 .authorizeRequests()
                 .antMatchers("/").hasAuthority("admin")
                 .antMatchers("/test").hasAuthority("admin")
+                .antMatchers("/user-info/**").hasAuthority("admin")
 
         ;
     }

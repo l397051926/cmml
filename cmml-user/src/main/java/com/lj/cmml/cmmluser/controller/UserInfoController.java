@@ -34,4 +34,14 @@ public class UserInfoController extends BaseController {
         return success(allUser);
     }
 
+    @ApiOperation("根据用户名字获取用户信息")
+    @GetMapping("/queryUserByName")
+    public Result queryUserByName(
+            String userName
+    ){
+        log.info("根据用户名字 查询用户信息 用户名:{}", userName);
+        UserInfo userInfo = userInfoService.querUserByName(userName);
+        return success(userInfo);
+    }
+
 }

@@ -26,4 +26,4 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 server:
-  port: 8080
+  port: 9090
