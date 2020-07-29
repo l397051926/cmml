@@ -1,10 +1,10 @@
 package com.lj.cmml.cmmluser.controller;
 
+import com.lj.cmml.cmmluser.expections.UserException;
 import com.lj.cmml.common.model.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
