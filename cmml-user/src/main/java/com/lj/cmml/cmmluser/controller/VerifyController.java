@@ -1,6 +1,5 @@
 package com.lj.cmml.cmmluser.controller;
 
-import com.lj.cmml.cmmluser.expections.UserException;
 import com.lj.cmml.common.model.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -21,9 +20,9 @@ public class VerifyController extends BaseController {
 
     @ApiOperation("用户模块 服务启动测试接口")
     @GetMapping("")
-    public Result verify(){
+    public Result verify() {
         log.info("功能校验接口....");
-        return success() ;
+        return success();
     }
 
 

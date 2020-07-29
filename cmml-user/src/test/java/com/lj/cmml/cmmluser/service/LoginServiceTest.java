@@ -1,6 +1,7 @@
 package com.lj.cmml.cmmluser.service;
 
 import com.lj.cmml.cmmluser.CmmlUserApplication;
+import com.lj.cmml.cmmluser.dto.LoginParam;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,10 +16,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = CmmlUserApplication.class)
 @RunWith(SpringRunner.class)
 @Log4j2
-public class UserServiceTest {
+public class LoginServiceTest {
 
     @Autowired
-    private UserInfoService userInfoService;
+    private LoginService loginService;
 
 
     @Test
@@ -26,5 +27,12 @@ public class UserServiceTest {
         log.info("hello user info test");
     }
 
+    @Test
+    public void loginTest(){
+        LoginParam loginParam = new LoginParam();
+        loginParam.setUserName("aa");
+        loginParam.setUserName("aa");
+        loginService.login(loginParam);
+    }
 
 }
