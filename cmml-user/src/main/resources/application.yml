@@ -10,6 +10,9 @@ spring:
     active:
       - druid
       - dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 logging:
   config: classpath:log4j2.xml
