@@ -1,6 +1,8 @@
 package com.lj.cmml.cmmluser.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lj.cmml.cmmluser.dto.UserParam;
 import com.lj.cmml.cmmluser.entity.UserInfo;
 import com.lj.cmml.cmmluser.expections.UserException;
@@ -50,5 +52,11 @@ public class UserInfoService {
 
         userInfoMapper.insert(userInfo);
 
+    }
+
+    public IPage<UserInfo> list(Integer pageNo, Integer pageSize, String searchVal) {
+        Page<UserInfo> page = new Page(pageNo, pageSize);
+        IPage<UserInfo> userList = userInfoMapper.queryUser(page, searchVal);
+        return userList;
     }
 }

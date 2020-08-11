@@ -1,7 +1,10 @@
 package com.lj.cmml.cmmluser.mapper;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lj.cmml.cmmluser.entity.UserInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * <p>
@@ -13,4 +16,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
 
+    IPage<UserInfo> queryUser(IPage<UserInfo> page,
+                              @Param("searchVal") String searchVal);
 }
