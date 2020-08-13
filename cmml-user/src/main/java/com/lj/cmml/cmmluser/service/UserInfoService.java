@@ -12,6 +12,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -49,6 +50,7 @@ public class UserInfoService {
         userInfo.setUnit(userParam.getUnit());
         userInfo.setEmail(userParam.getEmail());
         userInfo.setPhone(userParam.getPhone());
+        userInfo.setCreateTime(new Date());
 
         userInfoMapper.insert(userInfo);
 
@@ -58,5 +60,9 @@ public class UserInfoService {
         Page<UserInfo> page = new Page(pageNo, pageSize);
         IPage<UserInfo> userList = userInfoMapper.queryUser(page, searchVal);
         return userList;
+    }
+
+    public void deleteById(Integer id) {
+        userInfoMapper.deleteById(id);
     }
 }

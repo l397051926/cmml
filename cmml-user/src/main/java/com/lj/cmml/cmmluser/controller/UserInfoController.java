@@ -9,6 +9,7 @@ import com.lj.cmml.common.utils.ParameterUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -67,6 +68,16 @@ public class UserInfoController extends BaseController {
         IPage<UserInfo> userList = userInfoService.list(pageNo, pageSize, searchVal);
         return success(userList);
     }
+
+    @ApiOperation("获取用户列表")
+    @DeleteMapping("/deleteById")
+    public Result deleteById( @RequestParam() Integer id
+    ){
+        log.info("获取用户列表 id:{}", id);
+        userInfoService.deleteById(id);
+        return success();
+    }
+
 
 
 
